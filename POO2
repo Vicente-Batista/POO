@@ -1,0 +1,98 @@
+package AtividadesSemestre2.OrientaçãoObjeto;
+import java.util.Scanner;
+
+public class POO2 {
+
+    public static class Livro {
+        private int idLivro;
+        private String titulo;
+        private String autor01;
+        private String autor02;
+        private String editora;
+        private String isbn;
+    
+        public Livro() {
+        }
+    
+        public void setIdLivro(int idLivro) {
+            this.idLivro = idLivro;
+        }
+    
+        public void setTitulo(String titulo) {
+            this.titulo = titulo;
+        }
+    
+        public void setAutor01(String autor01) {
+            this.autor01 = autor01;
+        }
+    
+        public void setAutor02(String autor02) {
+            this.autor02 = autor02;
+        }
+    
+        public void setEditora(String editora) {
+            this.editora = editora;
+        }
+    
+        public void setIsbn(String isbn) {
+            this.isbn = isbn;
+        }
+
+        public int getIdLivro() {
+            return idLivro;
+        }
+    
+        public String getTitulo() {
+            return titulo;
+        }
+    
+        public String getAutor01() {
+            return autor01;
+        }
+    
+        public String getAutor02() {
+            return autor02;
+        }
+    
+        public String getEditora() {
+            return editora;
+        }
+    
+        public String getIsbn() {
+            return isbn;
+        }
+    }
+    
+    public class Main {
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+            Livro livro = new Livro();
+    
+            System.out.println("Digite o ID do Livro:");
+            livro.setIdLivro(scanner.nextInt());
+            scanner.nextLine();
+    
+            System.out.println("Digite o Título do Livro:");
+            livro.setTitulo(scanner.nextLine());
+    
+            System.out.println("Digite o Nome do Primeiro Autor:");
+            livro.setAutor01(scanner.nextLine());
+    
+            System.out.println("Digite o Nome do Segundo Autor (ou deixe em branco se não houver):");
+            livro.setAutor02(scanner.nextLine());
+    
+            System.out.println("Digite a Editora do Livro:");
+            livro.setEditora(scanner.nextLine());
+    
+            System.out.println("Digite o ISBN do Livro:");
+            livro.setIsbn(scanner.nextLine());
+
+            System.out.println("\nDados do Livro:");
+            System.out.println("ID do Livro: " + livro.getIdLivro());
+            System.out.println("Título: " + livro.getTitulo());
+            System.out.println("Autor 01: " + livro.getAutor01());
+            System.out.println("Editora: " + livro.getEditora());
+    
+        }
+    }
+}
