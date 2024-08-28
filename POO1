@@ -1,0 +1,81 @@
+package AtividadesSemestre2.OrientaçãoObjeto;
+import java.util.Scanner;
+
+public class POO1 {
+
+    public static class Veiculo {
+        private int idVeiculo;
+        private String marca;
+        private String modelo;
+        private String odometro;
+        private double valorVeiculo;
+    
+        public Veiculo() {
+        }
+    
+        public void setIdVeiculo(int idVeiculo) {
+            this.idVeiculo = idVeiculo;
+        }
+    
+        public void setMarca(String marca) {
+            this.marca = marca;
+        }
+    
+        public void setModelo(String modelo) {
+            this.modelo = modelo;
+        }
+    
+        public void setOdometro(String odometro) {
+            this.odometro = odometro;
+        }
+    
+        public void setValorVeiculo(double valorVeiculo) {
+            this.valorVeiculo = valorVeiculo;
+        }
+
+        public int getIdVeiculo() {
+            return idVeiculo;
+        }
+    
+        public String getMarca() {
+            return marca;
+        }
+    
+        public String getModelo() {
+            return modelo;
+        }
+    
+        public String getOdometro() {
+            return odometro;
+        }
+    
+        public double getValorVeiculo() {
+            return valorVeiculo;
+        }
+    }
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+            Veiculo veiculo = new Veiculo();
+    
+            System.out.println("Digite o ID do Veículo:");
+            veiculo.setIdVeiculo(scanner.nextInt());
+            scanner.nextLine();
+    
+            System.out.println("Digite a Marca do Veículo:");
+            veiculo.setMarca(scanner.nextLine());
+    
+            System.out.println("Digite o Modelo do Veículo:");
+            veiculo.setModelo(scanner.nextLine());
+    
+            System.out.println("Digite o Odômetro do Veículo:");
+            veiculo.setOdometro(scanner.nextLine());
+    
+            System.out.println("Digite o Valor do Veículo:");
+            veiculo.setValorVeiculo(scanner.nextDouble());
+    
+            System.out.println("\nDescrição do Veículo:");
+            System.out.println("Marca: " + veiculo.getMarca());
+            System.out.println("Modelo: " + veiculo.getModelo());
+            System.out.println("Odômetro: " + veiculo.getOdometro()+" km");
+        }
+    }
