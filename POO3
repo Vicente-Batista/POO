@@ -1,0 +1,88 @@
+package AtividadesSemestre2.OrientaçãoObjeto;
+
+import java.util.Scanner;
+
+public class POO3 {
+
+    public static class Imovel {
+        private int idImovel;
+        private String descricao;
+        private String tipoImovel;
+        private double valorImovel;
+    
+        public Imovel() {
+        }
+
+        public void setIdImovel(int idImovel) {
+            this.idImovel = idImovel;
+        }
+    
+        public void setDescricao(String descricao) {
+            this.descricao = descricao;
+        }
+    
+        public void setTipoImovel(String tipoImovel) {
+            if (tipoImovel.equalsIgnoreCase("rural") || tipoImovel.equalsIgnoreCase("urbano")) {
+                this.tipoImovel = tipoImovel;
+            } else {
+                throw new IllegalArgumentException("Tipo de imóvel inválido. Deve ser 'rural' ou 'urbano'.");
+            }
+        }
+    
+        public void setValorImovel(double valorImovel) {
+            this.valorImovel = valorImovel;
+        }
+    
+        public int getIdImovel() {
+            return idImovel;
+        }
+    
+        public String getDescricao() {
+            return descricao;
+        }
+    
+        public String getTipoImovel() {
+            return tipoImovel;
+        }
+    
+        public double getValorImovel() {
+            return valorImovel;
+        }
+    }
+    public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Imovel imovel = new Imovel();
+
+        try {
+            System.out.println("Digite o ID do Imóvel:");
+            imovel.setIdImovel(scanner.nextInt());
+            scanner.nextLine();
+
+            System.out.println("Digite a Descrição do Imóvel:");
+            imovel.setDescricao(scanner.nextLine());
+
+            String tipoImovel;
+            while (true) {
+                System.out.println("Digite o Tipo do Imóvel (rural ou urbano):");
+                tipoImovel = scanner.nextLine();
+                try {
+                    imovel.setTipoImovel(tipoImovel);
+                    break;
+                } catch (IllegalArgumentException e) {
+                    System.out.println(e.getMessage());
+                }
+            }
+
+            System.out.println("Digite o Valor do Imóvel:");
+            imovel.setValorImovel(scanner.nextDouble());
+
+            System.out.println("\nDados do Imóvel:");
+            System.out.println("ID do Imóvel: " + imovel.getIdImovel());
+            System.out.println("Descrição: " + imovel.getDescricao());
+            System.out.println("Valor do Imóvel: R$ " + imovel.getValorImovel());
+        } finally {
+        }
+    }
+}
+}
